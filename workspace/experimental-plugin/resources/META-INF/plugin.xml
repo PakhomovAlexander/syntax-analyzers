@@ -25,6 +25,8 @@
   <extensions defaultExtensionNs="com.intellij">
     <fileTypeFactory implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalFileTypeFactory"/>
     <lang.parserDefinition language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalParserDefinition"/>
+    <lang.syntaxHighlighterFactory language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalSyntaxHighlighterFactory"/>
+    <colorSettingsPage implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalColorSettingsPage"/>
   </extensions>
 
   <actions>
