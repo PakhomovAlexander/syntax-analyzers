@@ -16,19 +16,19 @@ public class ExperimentalFileType extends LanguageFileType {
     @NotNull
     @Override
     public String getName() {
-        return "Experimental file";
+        return "Experimental file type";
     }
 
     @NotNull
     @Override
     public String getDescription() {
-        return "Experimental language file";
+        return "Experimental language file type";
     }
 
     @NotNull
     @Override
     public String getDefaultExtension() {
-        return "exp";
+        return "exp ";
     }
 
     @Nullable
