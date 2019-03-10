@@ -1,0 +1,20 @@
+{
+  parserClass="ru.vsu.apakhomov.experimental.plugin.parser.ExperimentalParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Experimental"
+  psiImplClassSuffix="Impl"
+  psiPackage="ru.vsu.apakhomov.experimental.plugin.psi"
+  psiImplPackage="ru.vsu.apakhomov.experimental.plugin.psi.impl"
+
+  elementTypeHolderClass="ru.vsu.apakhomov.experimental.plugin.psi.ExperimentalTypes"
+  elementTypeClass="ru.vsu.apakhomov.experimental.plugin.psi.ExperimentalElementType"
+  tokenTypeClass="ru.vsu.apakhomov.experimental.plugin.psi.ExperimentalTokenType"
+}
+
+simpleFile ::= item_*
+
+private item_ ::= (property|COMMENT|CRLF)
+
+property ::= (KEY? SEPARATOR VALUE?) | KEY
