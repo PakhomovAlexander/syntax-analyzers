@@ -1,0 +1,34 @@
+<idea-plugin>
+  <id>com.your.company.unique.plugin.id</id>
+  <name>Experimental</name>
+  <version>1.0</version>
+  <vendor email="apakhomov@gridfore.com" url="http://www.gridfore.com">Gridfore</vendor>
+
+  <description><![CDATA[
+      Experimental plugin for GRIP language support in intellij IDEA
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Beta version of Experimental plugin for GRIP language
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <fileTypeFactory implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalFileTypeFactory"/>
+    <lang.parserDefinition language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalParserDefinition"/>
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+</idea-plugin>
