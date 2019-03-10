@@ -26,4 +26,12 @@ public class ExperimentalPropertyImpl extends ASTWrapperPsiElement implements Ex
     else super.accept(visitor);
   }
 
+  public String getKey() {
+    return ExperimentalPsiImplUtil.getKey(this);
+  }
+
+  public String getValue() {
+    return ExperimentalPsiImplUtil.getValue(this);
+  }
+
 }
