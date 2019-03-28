@@ -32,6 +32,7 @@
     <completion.contributor language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalCompletionContributor"/>
     <psi.referenceContributor implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalReferenceContributor"/>
     <lang.refactoringSupport language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalRefactoringSupportProvider"/>
+    <lang.findUsagesProvider language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalFindUsagesProvider"/>
   </extensions>
 
   <actions>
