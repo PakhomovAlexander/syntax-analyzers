@@ -28,6 +28,10 @@
     <lang.syntaxHighlighterFactory language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalSyntaxHighlighterFactory"/>
     <colorSettingsPage implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalColorSettingsPage"/>
     <annotator language="JAVA" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalAnnotator"/>
+    <codeInsight.lineMarkerProvider language="JAVA" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalLineMarkerProvider"/>
+    <completion.contributor language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalCompletionContributor"/>
+    <psi.referenceContributor implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalReferenceContributor"/>
+    <lang.refactoringSupport language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalRefactoringSupportProvider"/>
   </extensions>
 
   <actions>
