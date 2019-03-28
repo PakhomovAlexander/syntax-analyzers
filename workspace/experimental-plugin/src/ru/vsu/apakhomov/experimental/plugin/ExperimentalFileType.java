@@ -28,7 +28,7 @@ public class ExperimentalFileType extends LanguageFileType {
     @NotNull
     @Override
     public String getDefaultExtension() {
-        return "exp ";
+        return "exp";
     }
 
     @Nullable

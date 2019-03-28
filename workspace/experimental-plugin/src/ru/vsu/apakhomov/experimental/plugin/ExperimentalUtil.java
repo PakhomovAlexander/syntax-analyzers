@@ -18,9 +18,9 @@ public class ExperimentalUtil {
                 FileBasedIndex.getInstance().getContainingFiles(FileTypeIndex.NAME, ExperimentalFileType.INSTANCE,
                                                                 GlobalSearchScope.allScope(project));
         for (VirtualFile virtualFile : virtualFiles) {
-            ExperimentalProperty simpleFile = (ExperimentalProperty) PsiManager.getInstance(project).findFile(virtualFile);
-            if (simpleFile != null) {
-                ExperimentalProperty[] properties = PsiTreeUtil.getChildrenOfType(simpleFile, ExperimentalProperty.class);
+            ExperimentalFile experimentalFile = (ExperimentalFile) PsiManager.getInstance(project).findFile(virtualFile);
+            if (experimentalFile != null) {
+                ExperimentalProperty[] properties = PsiTreeUtil.getChildrenOfType(experimentalFile, ExperimentalProperty.class);
                 if (properties != null) {
                     for (ExperimentalProperty property : properties) {
                         if (key.equals(property.getKey())) {
@@ -42,9 +42,9 @@ public class ExperimentalUtil {
                 FileBasedIndex.getInstance().getContainingFiles(FileTypeIndex.NAME, ExperimentalFileType.INSTANCE,
                                                                 GlobalSearchScope.allScope(project));
         for (VirtualFile virtualFile : virtualFiles) {
-            ExperimentalFile simpleFile = (ExperimentalFile) PsiManager.getInstance(project).findFile(virtualFile);
-            if (simpleFile != null) {
-                ExperimentalProperty[] properties = PsiTreeUtil.getChildrenOfType(simpleFile, ExperimentalProperty.class);
+            ExperimentalFile experimentalFile = (ExperimentalFile) PsiManager.getInstance(project).findFile(virtualFile);
+            if (experimentalFile != null) {
+                ExperimentalProperty[] properties = PsiTreeUtil.getChildrenOfType(experimentalFile, ExperimentalProperty.class);
                 if (properties != null) {
                     Collections.addAll(result, properties);
                 }
