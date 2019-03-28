@@ -33,6 +33,7 @@
     <psi.referenceContributor implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalReferenceContributor"/>
     <lang.refactoringSupport language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalRefactoringSupportProvider"/>
     <lang.findUsagesProvider language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalFindUsagesProvider"/>
+    <lang.foldingBuilder language="JAVA" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalFoldingBuilder"/>
   </extensions>
 
   <actions>
