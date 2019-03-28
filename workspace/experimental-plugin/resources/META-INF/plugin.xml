@@ -27,6 +27,7 @@
     <lang.parserDefinition language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalParserDefinition"/>
     <lang.syntaxHighlighterFactory language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalSyntaxHighlighterFactory"/>
     <colorSettingsPage implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalColorSettingsPage"/>
+    <annotator language="JAVA" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalAnnotator"/>
   </extensions>
 
   <actions>
