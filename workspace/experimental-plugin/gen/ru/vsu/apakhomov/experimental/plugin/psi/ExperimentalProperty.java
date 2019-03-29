@@ -4,6 +4,7 @@ package ru.vsu.apakhomov.experimental.plugin.psi;
 import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
+import com.intellij.navigation.ItemPresentation;
 
 public interface ExperimentalProperty extends ExperimentalNamedElement {
 
@@ -16,5 +17,7 @@ public interface ExperimentalProperty extends ExperimentalNamedElement {
   PsiElement setName(String newName);
 
   PsiElement getNameIdentifier();
+
+  ItemPresentation getPresentation();
 
 }

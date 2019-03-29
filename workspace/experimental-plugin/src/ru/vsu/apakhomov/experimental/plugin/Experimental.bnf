@@ -20,4 +20,4 @@ simpleFile ::= item_*
 private item_ ::= (property|COMMENT|CRLF)
 
 property ::= (KEY? SEPARATOR VALUE?) | KEY {mixin="ru.vsu.apakhomov.experimental.plugin.psi.impl.ExperimentalNamedElementImpl"
-implements="ru.vsu.apakhomov.experimental.plugin.psi.ExperimentalNamedElement" methods=[getKey getValue getName setName getNameIdentifier]}
+implements="ru.vsu.apakhomov.experimental.plugin.psi.ExperimentalNamedElement" methods=[getKey getValue getName setName getNameIdentifier getPresentation]}

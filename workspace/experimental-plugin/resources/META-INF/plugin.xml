@@ -34,6 +34,7 @@
     <lang.refactoringSupport language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalRefactoringSupportProvider"/>
     <lang.findUsagesProvider language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalFindUsagesProvider"/>
     <lang.foldingBuilder language="JAVA" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalFoldingBuilder"/>
+    <gotoSymbolContributor implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalChooseByNameContributor"/>
   </extensions>
 
   <actions>
