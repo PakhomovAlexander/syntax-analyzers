@@ -23,7 +23,7 @@ public class ExperimentalAnnotator implements Annotator {
 
             if (value != null && value.startsWith(keyword + ":")) {
                 Project project = element.getProject();
-                String key = value.substring(keyword.length()+1);
+                String key = value.substring(keyword.length() + 1);
                 List<ExperimentalProperty> properties = ExperimentalUtil.findProperties(project, key);
                 if (properties.size() == 1) {
                     TextRange range = new TextRange(
@@ -37,7 +37,8 @@ public class ExperimentalAnnotator implements Annotator {
                             element.getTextRange().getStartOffset() + keyword.length() + 1,
                             element.getTextRange().getEndOffset()
                     );
-                    holder.createErrorAnnotation(range, "Unresolved property");
+                    holder.createErrorAnnotation(range, "Unresolved property")
+                          .registerFix(new CreatePropertyQuickFix(key));
                 }
             }
         }

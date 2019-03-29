@@ -1,10 +1,15 @@
 package ru.vsu.apakhomov.experimental.plugin.psi.impl;
 
 import com.intellij.lang.ASTNode;
+import com.intellij.navigation.ItemPresentation;
 import com.intellij.psi.PsiElement;
+import org.jetbrains.annotations.Nullable;
+import ru.vsu.apakhomov.experimental.plugin.ExperimentalIcons;
 import ru.vsu.apakhomov.experimental.plugin.psi.ExperimentalElementFactory;
 import ru.vsu.apakhomov.experimental.plugin.psi.ExperimentalProperty;
 import ru.vsu.apakhomov.experimental.plugin.psi.ExperimentalTypes;
+
+import javax.swing.*;
 
 public class ExperimentalPsiImplUtil {
     public static String getKey(ExperimentalProperty element) {
@@ -48,5 +53,27 @@ public class ExperimentalPsiImplUtil {
         } else {
             return null;
         }
+    }
+
+    public static ItemPresentation getPresentation(final ExperimentalProperty element) {
+        return new ItemPresentation() {
+            @Nullable
+            @Override
+            public String getPresentableText() {
+                return element.getKey();
+            }
+
+            @Nullable
+            @Override
+            public String getLocationString() {
+                return element.getContainingFile().getName();
+            }
+
+            @Nullable
+            @Override
+            public Icon getIcon(boolean unused) {
+                return ExperimentalIcons.FILE;//todo: this code has never been called...
+            }
+        };
     }
 }

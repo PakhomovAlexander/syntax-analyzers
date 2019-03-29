@@ -34,6 +34,12 @@
     <lang.refactoringSupport language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalRefactoringSupportProvider"/>
     <lang.findUsagesProvider language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalFindUsagesProvider"/>
     <lang.foldingBuilder language="JAVA" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalFoldingBuilder"/>
+    <gotoSymbolContributor implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalChooseByNameContributor"/>
+    <lang.psiStructureViewFactory language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalStructureViewFactory"/>
+    <lang.formatter language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalFormattingModelBuilder"/>
+    <codeStyleSettingsProvider implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalCodeStyleSettingsProvider"/>
+    <langCodeStyleSettingsProvider implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalLanguageCodeStyleSettingsProvider"/>
+    <lang.commenter language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalCommenter"/>
   </extensions>
 
   <actions>

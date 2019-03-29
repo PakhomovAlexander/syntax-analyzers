@@ -9,6 +9,7 @@ import com.intellij.psi.PsiElementVisitor;
 import com.intellij.psi.util.PsiTreeUtil;
 import static ru.vsu.apakhomov.experimental.plugin.psi.ExperimentalTypes.*;
 import ru.vsu.apakhomov.experimental.plugin.psi.*;
+import com.intellij.navigation.ItemPresentation;
 
 public class ExperimentalPropertyImpl extends ExperimentalNamedElementImpl implements ExperimentalProperty {
 
@@ -43,6 +44,10 @@ public class ExperimentalPropertyImpl extends ExperimentalNamedElementImpl imple
 
   public PsiElement getNameIdentifier() {
     return ExperimentalPsiImplUtil.getNameIdentifier(this);
+  }
+
+  public ItemPresentation getPresentation() {
+    return ExperimentalPsiImplUtil.getPresentation(this);
   }
 
 }
