@@ -39,6 +39,7 @@
     <lang.formatter language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalFormattingModelBuilder"/>
     <codeStyleSettingsProvider implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalCodeStyleSettingsProvider"/>
     <langCodeStyleSettingsProvider implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalLanguageCodeStyleSettingsProvider"/>
+    <lang.commenter language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalCommenter"/>
   </extensions>
 
   <actions>
