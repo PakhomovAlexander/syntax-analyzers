@@ -36,6 +36,7 @@
     <lang.foldingBuilder language="JAVA" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalFoldingBuilder"/>
     <gotoSymbolContributor implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalChooseByNameContributor"/>
     <lang.psiStructureViewFactory language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalStructureViewFactory"/>
+    <lang.formatter language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalFormattingModelBuilder"/>
   </extensions>
 
   <actions>
