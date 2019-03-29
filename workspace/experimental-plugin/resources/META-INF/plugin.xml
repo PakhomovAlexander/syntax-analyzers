@@ -37,6 +37,8 @@
     <gotoSymbolContributor implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalChooseByNameContributor"/>
     <lang.psiStructureViewFactory language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalStructureViewFactory"/>
     <lang.formatter language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalFormattingModelBuilder"/>
+    <codeStyleSettingsProvider implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalCodeStyleSettingsProvider"/>
+    <langCodeStyleSettingsProvider implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalLanguageCodeStyleSettingsProvider"/>
   </extensions>
 
   <actions>
