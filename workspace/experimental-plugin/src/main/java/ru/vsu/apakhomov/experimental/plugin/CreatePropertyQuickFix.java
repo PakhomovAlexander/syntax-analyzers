@@ -4,12 +4,14 @@ import com.intellij.codeInsight.intention.impl.BaseIntentionAction;
 import com.intellij.lang.ASTNode;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.WriteCommandAction;
+import com.intellij.openapi.components.ServiceManager;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.pom.Navigatable;
@@ -18,11 +20,13 @@ import com.intellij.psi.PsiManager;
 import com.intellij.psi.search.FileTypeIndex;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.IncorrectOperationException;
+import one.util.streamex.StreamEx;
 import org.jetbrains.annotations.NotNull;
 import ru.vsu.apakhomov.experimental.plugin.psi.ExperimentalElementFactory;
 import ru.vsu.apakhomov.experimental.plugin.psi.ExperimentalFile;
 import ru.vsu.apakhomov.experimental.plugin.psi.ExperimentalProperty;
 
+import java.util.Arrays;
 import java.util.Collection;
 
 public class CreatePropertyQuickFix extends BaseIntentionAction {
@@ -35,13 +39,20 @@ public class CreatePropertyQuickFix extends BaseIntentionAction {
     @NotNull
     @Override
     public String getText() {
-        return "Create property";
+        Project project = StreamEx.of(ProjectManager.getInstance().getOpenProjects())
+                                  .filter(project1 -> project1.getName().contains("experimental"))
+                                  .findFirst().orElse(ProjectManager.getInstance().getDefaultProject());
+
+        ExperimentalService projectService = ServiceManager.getService(project, ExperimentalService.class);
+
+        //only for learning services purposes
+        return "Create " + projectService.getLanguageName() + " property";
     }
 
     @NotNull
     @Override
     public String getFamilyName() {
-        return "Experimental properties";
+        return  "Experimental properties";
     }
 
     @Override

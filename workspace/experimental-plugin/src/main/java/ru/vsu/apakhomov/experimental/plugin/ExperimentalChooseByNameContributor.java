@@ -1,9 +1,11 @@
 package ru.vsu.apakhomov.experimental.plugin;
 
 import com.intellij.navigation.*;
+import com.intellij.openapi.components.ServiceManager;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import ru.vsu.apakhomov.experimental.plugin.psi.ExperimentalProperty;
+import ru.vsu.apakhomov.experimental.plugin.psi.impl.ExperimentalPropertyImpl;
 
 import java.util.*;
 
