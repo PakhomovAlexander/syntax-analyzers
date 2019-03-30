@@ -5,5 +5,5 @@ import com.intellij.openapi.util.IconLoader;
 import javax.swing.*;
 
 public class ExperimentalIcons {
-    public static final Icon FILE = IconLoader.getIcon("/ru/vsu/apakhomov/experimental/plugin/icons/exp-icon.png");
+    public static final Icon FILE = IconLoader.getIcon("icons/exp-icon.png");
 }

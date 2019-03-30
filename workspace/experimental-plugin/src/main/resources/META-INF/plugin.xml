@@ -1,0 +1,49 @@
+<idea-plugin>
+  <id>ru.vsu.apakhomov.experimental.plugin.Experimental</id>
+  <name>Experimental</name>
+  <version>0.1</version>
+  <vendor email="apakhomov@gridfore.com" url="http://www.gridfore.com">Gridfore</vendor>
+
+  <description><![CDATA[
+      Experimental plugin for GRIP language support in intellij IDEA
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Beta version of Experimental plugin for GRIP language
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <fileTypeFactory implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalFileTypeFactory"/>
+    <lang.parserDefinition language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalParserDefinition"/>
+    <lang.syntaxHighlighterFactory language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalSyntaxHighlighterFactory"/>
+    <colorSettingsPage implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalColorSettingsPage"/>
+    <annotator language="JAVA" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalAnnotator"/>
+    <codeInsight.lineMarkerProvider language="JAVA" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalLineMarkerProvider"/>
+    <completion.contributor language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalCompletionContributor"/>
+    <psi.referenceContributor implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalReferenceContributor"/>
+    <lang.refactoringSupport language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalRefactoringSupportProvider"/>
+    <lang.findUsagesProvider language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalFindUsagesProvider"/>
+    <lang.foldingBuilder language="JAVA" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalFoldingBuilder"/>
+    <gotoSymbolContributor implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalChooseByNameContributor"/>
+    <lang.psiStructureViewFactory language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalStructureViewFactory"/>
+    <lang.formatter language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalFormattingModelBuilder"/>
+    <codeStyleSettingsProvider implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalCodeStyleSettingsProvider"/>
+    <langCodeStyleSettingsProvider implementation="ru.vsu.apakhomov.experimental.plugin.ExperimentalLanguageCodeStyleSettingsProvider"/>
+    <lang.commenter language="ExperimentalLang" implementationClass="ru.vsu.apakhomov.experimental.plugin.ExperimentalCommenter"/>
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+</idea-plugin>
