@@ -17,7 +17,7 @@
 
 %%% Макет страницы %%%
 % Выставляем значения полей (ГОСТ 7.0.11-2011, 5.3.7)
-\geometry{a4paper, top=2cm, bottom=2cm, left=2.5cm, right=1cm, nofoot, nomarginpar} %, heightrounded, showframe
+\geometry{a4paper, top=2cm, bottom=2cm, left=3cm, right=1.5cm, nofoot, nomarginpar} %, heightrounded, showframe
 \setlength{\topskip}{0pt}   %размер дополнительного верхнего поля
 \setlength{\footskip}{12.3pt} % снимет warning, согласно https://tex.stackexchange.com/a/334346
 
@@ -74,6 +74,8 @@
 
 \renewcommand*{\cftappendixname}{\appendixname\space} % Слово Приложение в оглавлении
 
+\cftsetindents{chapter}{0.5in}{0.5in}{0.5in}
+
 %%% Колонтитулы %%%
 % Порядковый номер страницы печатают на середине верхнего поля страницы (ГОСТ Р 7.0.11-2011, 5.3.8)
 \makeevenhead{plain}{}{\thepage}{}
@@ -107,7 +109,8 @@
     \chapterstyle{default}
     \setlength{\beforechapskip}{0pt}
     \setlength{\midchapskip}{0pt}
-    \setlength{\afterchapskip}{\theintvl\curtextsize}
+    %\setlength{\afterchapskip}{\theintvl\curtextsize}
+    \setlength{\afterchapskip}{6pt}
     \renewcommand*{\chapnamefont}{\basegostsectionfont}
     \renewcommand*{\chapnumfont}{\basegostsectionfont}
     \renewcommand*{\chaptitlefont}{\basegostsectionfont}
@@ -149,12 +152,19 @@
 }{}%
 
 %%% Интервалы между заголовками
-\setbeforesecskip{\theintvl\curtextsize}% Заголовки отделяют от текста сверху и снизу тремя интервалами (ГОСТ Р 7.0.11-2011, 5.3.5).
-\setaftersecskip{\theintvl\curtextsize}
-\setbeforesubsecskip{\theintvl\curtextsize}
-\setaftersubsecskip{\theintvl\curtextsize}
-\setbeforesubsubsecskip{\theintvl\curtextsize}
-\setaftersubsubsecskip{\theintvl\curtextsize}
+%\setbeforesecskip{\theintvl\curtextsize}% Заголовки отделяют от текста сверху и снизу тремя интервалами (ГОСТ Р 7.0.11-2011, 5.3.5).
+%\setaftersecskip{\theintvl\curtextsize}
+%\setbeforesubsecskip{\theintvl\curtextsize}
+%\setaftersubsecskip{\theintvl\curtextsize}
+%\setbeforesubsubsecskip{\theintvl\curtextsize}
+%\setaftersubsubsecskip{\theintvl\curtextsize}
+
+\setbeforesecskip{12pt}% ГОСТ может отделять хоть 10-ю интервалами, а вот кафедра МОиАИС ВГУ отделяет 12 и 6 пт.
+\setaftersecskip{6pt}
+\setbeforesubsecskip{12pt}
+\setaftersubsecskip{6pt}
+\setbeforesubsubsecskip{12pt}
+\setaftersubsubsecskip{6pt}
 
 %%% Блок дополнительного управления размерами заголовков
 \ifnumequal{\value{headingsize}}{1}{% Пропорциональные заголовки и базовый шрифт 14 пт
