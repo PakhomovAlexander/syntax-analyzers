@@ -2,11 +2,7 @@
 
 init: clean diploma
 
-ifneq ($(SystemDrive),)
-    FONT_FAMILY?=1
-else
-    FONT_FAMILY?=2
-endif
+FONT_FAMILY?=1
 
 TEXFLAGS?=-halt-on-error -file-line-error
 
