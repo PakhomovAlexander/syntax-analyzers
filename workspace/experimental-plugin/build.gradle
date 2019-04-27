@@ -61,7 +61,7 @@ task generateExperimentalParser(type: GenerateParser) { //fixme: now only from i
 }
 
 intellij {
-    version '2018.3' //IntelliJ IDEA 2016.3 dependency; for a full list of IntelliJ IDEA releases please see https://www.jetbrains.com/intellij-repository/releases
+    version '2019.1' //IntelliJ IDEA 2016.3 dependency; for a full list of IntelliJ IDEA releases please see https://www.jetbrains.com/intellij-repository/releases
     pluginName 'experimental-plugin'
     intellij.updateSinceUntilBuild false //Disables updating since-build attribute in plugin.xml
 }
