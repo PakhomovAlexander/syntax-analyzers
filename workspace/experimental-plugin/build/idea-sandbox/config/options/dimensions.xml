@@ -1,0 +1,22 @@
+<application>
+  <component name="DimensionService">
+    <location key="FileChooserDialogImpl.0.0.1920.1080" x="743" y="206" />
+    <location key="WELCOME_SCREEN.0.0.1920.1080" x="960" y="230" />
+    <location key="com.intellij.ide.util.TipDialog.0.0.1920.1080" x="628" y="395" />
+    <location key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor.0.0.1920.1080" x="495" y="238" />
+    <location key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog.0.0.1920.1080" x="758" y="473" />
+    <location key="SettingsEditor.0.0.1920.1080" x="391" y="227" />
+    <location key="IDE.errors.dialog.0.0.1920.1080" x="500" y="108" />
+    <location key="new project wizard.0.0.1920.1080" x="489" y="182" />
+    <location key="IdeErrosDialog.0.0.1920.1080" x="417" y="363" />
+    <location key="#Intentions.0.0.1920.1080" x="512" y="241" />
+    <size key="FileChooserDialogImpl.0.0.1920.1080" width="424" height="496" />
+    <size key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor.0.0.1920.1080" width="824" height="684" />
+    <size key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog.0.0.1920.1080" width="308" height="214" />
+    <size key="SettingsEditor.0.0.1920.1080" width="1042" height="706" />
+    <size key="IDE.errors.dialog.0.0.1920.1080" width="1210" height="753" />
+    <size key="new project wizard.0.0.1920.1080" width="846" height="795" />
+    <size key="IdeErrosDialog.0.0.1920.1080" width="989" height="434" />
+    <size key="#Intentions.0.0.1920.1080" width="800" height="677" />
+  </component>
+</application>

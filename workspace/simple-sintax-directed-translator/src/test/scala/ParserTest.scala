@@ -1,9 +1,10 @@
 import java.io.{ByteArrayInputStream, ByteArrayOutputStream}
 
 import org.scalatest.FunSuite
+import parser.Parser
 
 class ParserTest extends FunSuite {
-  test("Parser.parse") {
+  test("parser.Parser.parse") {
     val input = new ByteArrayInputStream("5+6-9-1".getBytes)
     val output = new ByteArrayOutputStream()
 
@@ -13,7 +14,7 @@ class ParserTest extends FunSuite {
     output.toByteArray sameElements "56+9-1-".getBytes
   }
 
-  test("Parser.parse failover") {
+  test("parser.Parser.parse failover") {
     val input = new ByteArrayInputStream("5+asd6".getBytes)
     val output = new ByteArrayOutputStream()
 
