@@ -1,0 +1,4 @@
+package ru.vsu.apakhomov.experimental.plugin.gdsl
+
+class test {
+}
