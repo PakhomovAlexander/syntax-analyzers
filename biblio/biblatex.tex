@@ -182,9 +182,10 @@ sorting=none,% настройка сортировки списка литера
 
 %\ifnumequal{\value{draft}}{0}{% Чистовик
 %\renewcommand*{\mkgostheading}[1]{\usebibmacro{string+doi}{#1}} % ссылка на doi с авторов. стоящих впереди записи
-%\renewcommand*{\mkgostheading}[1]{#1} % только лишь убираем курсив с авторов
+\renewcommand*{\mkgostheading}[1]{#1} % только лишь убираем курсив с авторов
 %}{}
-%\DeclareFieldFormat{title}{\usebibmacro{string+doi}{#1}} % ссылка на doi с названия работы
+\DeclareFieldFormat{title}{#1}
+\DeclareFieldFormat{journaltitle}{#1}
 %\DeclareFieldFormat{journaltitle}{\usebibmacro{string+doi}{#1}} % ссылка на doi с названия журнала
 %%% Тире как разделитель в библиографии традиционной руской длины:
 \renewcommand*{\newblockpunct}{\addperiod\addnbspace\cyrdash\space\bibsentence}
@@ -343,4 +344,3 @@ sorting=none,% настройка сортировки списка литера
 \newcommand*{\insertbiblioother}{
 \printbibliography[heading=otherpublications,keyword=biblioother]
 }
-
