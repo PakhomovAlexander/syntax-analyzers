@@ -657,4 +657,11 @@
   file      = {:C\:/Users/apakhomov/Desktop/Diplom/literature/Dragon Book - Compilers Principles Techniques and Tools (2nd Edition).pdf:PDF},
 }
 
+@Article{Bostov,
+  author  = {Д.С. Бостов},
+  title   = {Обзор современных средств создания и поддержки предметно-ориентированных языков программирования},
+  journal = {Вестник ЮУрГУ. Серия «Компьютерные технологии, управление, радиоэлектроника»},
+  year    = {2013},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
