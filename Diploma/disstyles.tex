@@ -49,7 +49,8 @@
 
 %%% Оглавление %%%
 \renewcommand{\cftchapterdotsep}{\cftdotsep}                % отбивка точками до номера страницы начала главы/раздела
-\renewcommand\cftbeforechapterskip{0pt}						% 
+\renewcommand\cftbeforechapterskip{0pt}	
+\renewcommand{\cftdotsep}{2}					% 
 
 %% Переносить слова в заголовке не допускается (ГОСТ Р 7.0.11-2011, 5.3.5). Заголовки в оглавлении должны точно повторять заголовки в тексте (ГОСТ Р 7.0.11-2011, 5.2.3). Прямого указания на запрет переносов в оглавлении нет, но по той же логике невнесения искажений в смысл, лучше в оглавлении не переносить:
 \setrmarg{2.55em plus1fil}                             %To have the (sectional) titles in the ToC, etc., typeset ragged right with no hyphenation
