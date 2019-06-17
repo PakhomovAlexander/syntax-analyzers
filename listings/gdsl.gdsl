@@ -1,0 +1,134 @@
+package com.gridfore.grip.lang.gdsl
+
+import com.intellij.lang.ASTNode
+import com.intellij.openapi.project.Project
+import com.intellij.psi.JavaPsiFacade
+import com.intellij.psi.PsiFile
+import com.intellij.psi.PsiPackage
+import com.intellij.psi.search.GlobalSearchScope
+
+def ctx2 = context(scope: closureScope())
+
+contributor(ctx2) {
+    // XXX without this line the whole contributor stops working
+    String type = psiType
+
+    Project project = place.manager.project
+    JavaPsiFacade jpf = JavaPsiFacade.getInstance(project)
+
+    List<PsiFile> metadataFiles = getAllMetadataFiles(jpf, project)
+
+    List<FieldExpression> fields = getFieldsExpressions(metadataFiles)
+
+    fields.each { field ->
+        property([
+                name: field.fieldName,
+                type: field.fieldType,
+                doc : "from ${field.file} file".toString()
+        ])
+    }
+}
+
+private static synchronized List<FieldExpression> getFieldsExpressions(List<PsiFile> metadataFiles) {
+    Map<PsiFile, List<FieldExpression.FieldExpressionBuilder>> map = [:]
+
+    metadataFiles.collect { file ->
+        List<ASTNode> nodes = file.node.getChildren()
+        List<ASTNode> applicationExpressions = nodes.findAll { it.elementType.toString() == "APPLICATION_EXPRESSION" }
+        List<ASTNode> fieldsExpressions = applicationExpressions.collect {
+            getLeftChildOrSelf(getLeftChildOrSelf(it))
+        }.findAll {
+            getLeftChildOrSelf(getLeftChildOrSelf(getLeftChildOrSelf(it))).text == 'field'
+        }
+
+        map[file] = fieldsExpressions.collect {
+            FieldExpression.FieldExpressionBuilder builder = FieldExpression.builder()
+            builder.file = file
+            ASTNode[] fieldNames = getLeftChildOrSelf(getLeftChildOrSelf(it)).getChildren()
+            if (fieldNames.size() > 2) {
+                builder.fieldName = fieldNames[2]?.text?.replaceAll("'", '')?.trim()
+            }
+
+
+            if (it.getChildren().size() > 2) {
+                String fieldTypeName = it?.getChildren()[2]?.text
+                if (fieldTypeName) {
+                    builder.fieldType = findClassBySimpleName(fieldTypeName)
+                }
+            }
+
+            builder
+        }
+
+    }
+
+    map.collectMany { entry -> entry.value }
+            .findAll { expr -> expr.fieldName != null }
+            .collect { it.build() }
+}
+
+private static ASTNode getLeftChildOrSelf(ASTNode node) {
+    if (node.getChildren().size() > 0) {
+        node.getChildren()[0]
+    } else {
+        node
+    }
+}
+
+private static synchronized Class<?> findClassBySimpleName(String fieldTypeName) {
+    switch (fieldTypeName.trim()) {
+        case "Long": Class.forName("java.lang.Long")
+            break
+        case "Integer": Class.forName("java.lang.Integer")
+            break
+        case "Short": Class.forName("java.lang.Short")
+            break
+        case "Byte": Class.forName("java.lang.Byte")
+            break
+        case "String": Class.forName("java.lang.String")
+            break
+        case "Timestamp": Class.forName("java.sql.Timestamp")
+            break
+        case "BigDecimal": Class.forName("java.math.BigDecimal")
+            break
+        default: null
+    }
+}
+
+private static synchronized List<PsiFile> getAllMetadataFiles(JavaPsiFacade jpf, Project project) {
+    PsiPackage metadata = jpf.findPackage("METADATA")
+    List<PsiPackage> packages = []
+    metadata.subPackages.collect { packages.addAll(it.subPackages) }
+
+    List<PsiFile> files = []
+    packages.collect { files.addAll(it.getFiles(GlobalSearchScope.allScope(project))) }
+    files
+}
+
+class FieldExpression {
+    final String fieldName
+    final Class fieldType
+    final PsiFile file
+
+    FieldExpression(final String fieldName,
+                    final Class fieldType,
+                    final PsiFile file) {
+        this.fieldName = fieldName
+        this.fieldType = fieldType
+        this.file = file
+    }
+
+    static FieldExpressionBuilder builder() {
+        new FieldExpressionBuilder()
+    }
+
+    static class FieldExpressionBuilder {
+        String fieldName
+        Class fieldType
+        PsiFile file
+
+        FieldExpression build() {
+            new FieldExpression(fieldName, fieldType, file)
+        }
+    }
+}
