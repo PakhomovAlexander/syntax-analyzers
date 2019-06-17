@@ -51,6 +51,7 @@
 \include{Diploma/conclusion}      % Заключение
 \include{Diploma/references}      % Список литературы
 
+
 %%% Настройки для приложений
 \appendix
 % Оформление заголовков приложений ближе к ГОСТ:
@@ -58,5 +59,8 @@
 \renewcommand*{\afterchapternum}{\par\nobreak\vskip \midchapskip}
 \renewcommand\thechapter{\Asbuk{chapter}} % Чтобы приложения русскими буквами нумеровались
 
+%\renewcommand{\chaptername}{Приложение}
+\chapterstyle{thesisgostchapname}
+\include{Diploma/appendix}      % Листинг
 
 \end{document}
